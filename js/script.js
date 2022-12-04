@@ -16,7 +16,7 @@ if (navigator.serviceWorker) {
 }
 
 function calculate() {
-  let userSize = document.getElementById("size").value
+  let userSize = document.getElementById("size-of-drink").value
   let userdrink = document.getElementById("kind-of-drink").value
 
   if (userSize == "Small") {
