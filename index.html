@@ -8,7 +8,7 @@
     <meta name="keywords" content="mths, ics2o" />
     <meta name="author" content="brennan-lee" />
     <meta name="theme-color" content="#FFFFFF" />
-    <title>GitHub page as PWA template</title>
+    <title>soft drink</title>
     <link
       rel="canonical"
       href="https://brennan-lee.github.io/ICS2O-PWA-Test/"
@@ -45,14 +45,14 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   </head>
-  <title>My first PWA</title>
+  <title>soft drink</title>
   <body>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="./js/script.js"></script>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">My first PWA</span>
+          <span class="mdl-layout-title">soft drink</span>
         </div>
       </header>
       <main class="mdl-layout__content">
@@ -64,16 +64,31 @@
           height="25%"
         />
         <p></p>
+        <select name="Size!" id="size">
+          <option value="Size">Size</option>
+          <option value="Small">Small</option>
+          <option value="Medium">Medium</option>
+          <option value="Large">Large</option>
+        </select>
+        <!-- Second select box | drink -->
+        <select name="drink!" id="drink">
+          <option value="drink">size of drink</option>
+          <option value="Extra-Cheese">Extra Cheese</option>
+          <option value="Sprite">Sprite</option>
+          <option value="pepsi">pepsi</option>
+        </select>
         <!-- Raised button with ripple -->
         <button
           class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-          onclick="myButtonClicked()"
+          onclick="calculate()"
         >
           Say "Hello, World!"
         </button>
         <!-- basic text -->
         <p></p>
-        <div id="hello-world"></div>
+        <div id="drink"></div>
+        <div id="size"></div>
+        <div id="total"></div>
       </main>
     </div>
   </body>
