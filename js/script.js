@@ -37,16 +37,14 @@ function calculate() {
 
   if (userdrink == "cola") {
     let topingPrice = 0.5
-    document.getElementById("kind-of-drink").innerHTML =
-      "You want to add cola."
+    document.getElementById("kind-of-drink").innerHTML = "You want to add cola."
   } else if (userdrink == "Sprite") {
     let topingPrice = 1.0
     document.getElementById("kind-of-drink").innerHTML =
       "You want to add Sprite."
   } else if (userdrink == "pepsi") {
     let topingPrice = 1.5
-    document.getElementById("kind-of-drink").innerHTML =
-      "You want pepsi."
+    document.getElementById("kind-of-drink").innerHTML = "You want pepsi."
   } else {
     document.getElementById("kind-of-drink").innerHTML = "Error"
   }
@@ -54,5 +52,5 @@ function calculate() {
   let totalPrice = sizePrice + drinkPrice
 
   document.getElementById("total").innerHTML =
-    "Your total will be $" + totalPrice 
+    "Your total will be $" + totalPrice
 }
