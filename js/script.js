@@ -25,15 +25,15 @@ function calculate() {
   if (userSize == "Small") {
     let sizePrice = 1.0
     document.getElementById("drink")
-      "You want to order a small soft drink."
+    ;("You want to order a small soft drink.")
   } else if (userSize == "Medium") {
     let sizePrice = 1.5
     document.getElementById("drink")
-      "You want to order a medium soft drink."
+    ;("You want to order a medium soft drink.")
   } else if (userSize == "Large") {
     let sizePrice = 2.0
     document.getElementById("drink")
-      "You want to order a large soft drink."
+    ;("You want to order a large soft drink.")
   } else {
     document.getElementById("drink").innerHTML = "Error"
   }
@@ -51,5 +51,5 @@ function calculate() {
   let totalPrice = sizePrice + drinkPrice
 
   document.getElementById("total").innerHTML =
-  "your total will be" + totalPrice.toFixed(2)
+    "your total will be" + totalPrice.toFixed(2)
 }
