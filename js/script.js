@@ -19,32 +19,31 @@ function calculate() {
   let userSize = document.getElementById("size-of-drink").value
   let userdrink = document.getElementById("kind-of-drink").value
 
+  let sizePrice = 0.0
+  let drinkPrice = 0.0
+
   if (userSize == "Small") {
     let sizePrice = 1.0
-    document.getElementById("drink").innerHTML =
+    document.getElementById("drink")
       "You want to order a small soft drink."
   } else if (userSize == "Medium") {
     let sizePrice = 1.5
-    document.getElementById("drink").innerHTML =
+    document.getElementById("drink")
       "You want to order a medium soft drink."
   } else if (userSize == "Large") {
     let sizePrice = 2.0
-    document.getElementById("drink").innerHTML =
+    document.getElementById("drink")
       "You want to order a large soft drink."
   } else {
     document.getElementById("drink").innerHTML = "Error"
   }
 
-  if (userdrink == "cola") {
-    let drinkPrice = 0.5
-    document.getElementById("kind-of-drink").innerHTML = "You want to add cola."
-  } else if (userdrink == "Sprite") {
-    let drinkPrice = 1.0
-    document.getElementById("kind-of-drink").innerHTML =
-      "You want to add Sprite."
-  } else if (userdrink == "pepsi") {
-    let drinkPrice = 1.5
-    document.getElementById("kind-of-drink").innerHTML = "You want pepsi."
+  if (userTopings == "cola") {
+    topingPrice = 0.5
+  } else if (userTopings == "Sprite") {
+    topingPrice = 1.0
+  } else if (userTopings == "pepsi") {
+    topingPrice = 1.5
   } else {
     document.getElementById("kind-of-drink").innerHTML = "Error"
   }
@@ -52,5 +51,5 @@ function calculate() {
   let totalPrice = sizePrice + drinkPrice
 
   document.getElementById("total").innerHTML =
-    "Your total will be $" + totalPrice
+  "your total will be" + totalPrice.toFixed(2)
 }
