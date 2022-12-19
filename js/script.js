@@ -38,12 +38,12 @@ function calculate() {
     document.getElementById("drink").innerHTML = "Error"
   }
 
-  if (userTopings == "cola") {
-    topingPrice = 0.5
-  } else if (userTopings == "Sprite") {
-    topingPrice = 1.0
-  } else if (userTopings == "pepsi") {
-    topingPrice = 1.5
+  if (userdrink == "cola") {
+    drinkPrice = 0.5
+  } else if (userdrink == "Sprite") {
+    drinkPrice = 1.0
+  } else if (userdrink == "pepsi") {
+    drinkPrice = 1.5
   } else {
     document.getElementById("kind-of-drink").innerHTML = "Error"
   }
