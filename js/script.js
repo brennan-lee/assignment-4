@@ -1,13 +1,13 @@
-// Copyright (c) 2020 Mr. Coxall All rights reserved
+// Copyright (c) 2022 Brennan Lee All rights reserved
 //
-// Created by: Mr. Coxall
-// Created on: Sep 2020
+// Created by: Brennan Lee
+// Created on: dec 2022
 // This file contains the JS functions for index.html
 
 "use strict"
 
 /**
- * Check servie worker.
+ * Check service worker.
  */
 if (navigator.serviceWorker) {
   navigator.serviceWorker.register("/assignment-4/sw.js", {
@@ -15,41 +15,25 @@ if (navigator.serviceWorker) {
   })
 }
 
-function calculate() {
-  let userSize = document.getElementById("size-of-drink").value
-  let userdrink = document.getElementById("kind-of-drink").value
+/**
+ * This function displays an alert.
+ */
+function myButtonClicked() {
+  const TAX = 1.13
+  const delivery = 15
+  const size = parseFloat(document.getElementById("size").value)
+  const flavour = parseFloat(document.getElementById("flavour").value)
+  const pickUpOrDelivery = document.getElementById("pick-up-or-delivery").value
 
-  let sizePrice = 0.0
-  let drinkPrice = 0.0
+  const basePriceNoTAX = size + flavour
+  const basePrice = basePriceNoTAX * TAX
+  const deliveryOnly = (basePriceNoTAX + delivery) * TAX
 
-  if (userSize == "Small") {
-    let sizePrice = 1.0
-    document.getElementById("drink")
-    ;("You want to order a small soft drink.")
-  } else if (userSize == "Medium") {
-    let sizePrice = 1.5
-    document.getElementById("drink")
-    ;("You want to order a medium soft drink.")
-  } else if (userSize == "Large") {
-    let sizePrice = 2.0
-    document.getElementById("drink")
-    ;("You want to order a large soft drink.")
+  if (messageAnswer == "no" && pickUpOrDelivery == "delivery") {
+    document.getElementById("total").innerHTML =
+      "Your total is: $" + deliveryOnly.toFixed(2) + " including tax."
   } else {
-    document.getElementById("drink").innerHTML = "Error"
+    document.getElementById("total").innerHTML =
+      "Your total is: $" + basePrice.toFixed(2) + " including tax."
   }
-
-  if (userdrink == "cola") {
-    drinkPrice = 0.5
-  } else if (userdrink == "Sprite") {
-    drinkPrice = 1.0
-  } else if (userdrink == "pepsi") {
-    drinkPrice = 1.5
-  } else {
-    document.getElementById("kind-of-drink").innerHTML = "Error"
-  }
-
-  let totalPrice = sizePrice + drinkPrice
-
-  document.getElementById("total").innerHTML =
-    "your total will be" + totalPrice.toFixed(2)
 }
