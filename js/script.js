@@ -23,6 +23,7 @@ function myButtonClicked() {
   const delivery = 15
   const size = parseFloat(document.getElementById("size").value)
   const flavour = parseFloat(document.getElementById("flavour").value)
+  const messageAnswer = document.getElementById("message").value
   const pickUpOrDelivery = document.getElementById("pick-up-or-delivery").value
 
   const basePriceNoTAX = size + flavour
