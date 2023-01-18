@@ -1,40 +1,53 @@
 // Copyright (c) 2022 Brennan Lee All rights reserved
 //
 // Created by: Brennan Lee
-// Created on: dec 2022
+// Created on: Oct 2022
 // This file contains the JS functions for index.html
 
-"use strict"
+;("use strict")
 
 /**
- * Check service worker.
+ * Check servie worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/assignment-4/sw.js", {
-    scope: "/assignment-4/",
+  navigator.serviceWorker.register("/Assignment-4/sw.js", {
+    scope: "/Assignment-4/",
   })
 }
 
 /**
  * This function displays an alert.
+ * Words
  */
-function myButtonClicked() {
-  const TAX = 1.13
-  const delivery = 15
-  const size = parseFloat(document.getElementById("size").value)
-  const flavour = parseFloat(document.getElementById("flavour").value)
-  const messageAnswer = document.getElementById("message").value
-  const pickUpOrDelivery = document.getElementById("pick-up-or-delivery").value
+function calculate() {
+  let userSize = document.getElementById("size").value
+  let userkind = document.getElementById("kind").value
 
-  const basePriceNoTAX = size + flavour
-  const basePrice = basePriceNoTAX * TAX
-  const deliveryOnly = (basePriceNoTAX + delivery) * TAX
+  let sizePrice = 0.0
+  let kindPrice = 0.0
 
-  if (messageAnswer == "no" && pickUpOrDelivery == "delivery") {
-    document.getElementById("total").innerHTML =
-      "Your total is: $" + deliveryOnly.toFixed(2) + " including tax."
+  if (userSize == "Small") {
+    sizePrice = 1.0
+  } else if (userSize == "Medium") {
+    sizePrice = 1.5
+  } else if (userSize == "Large") {
+    sizePrice = 2.0
   } else {
-    document.getElementById("total").innerHTML =
-      "Your total is: $" + basePrice.toFixed(2) + " including tax."
+    document.getElementById("drinkSize").innerHTML = "Error"
   }
+
+  if (userKind == "pepsi") {
+    kindPrice = 0.5
+  } else if (userkind == "root-beer") {
+    kindPrice = 1.0
+  } else if (userKind == "cola") {
+    kindPrice = 1.5
+  } else {
+    document.getElementById("kind").innerHTML = "Error"
+  }
+
+  let totalPrice = sizePrice + kindPrice
+
+  document.getElementById("total").innerHTML =
+    "Your total will be $" + totalPrice.toFixed(2)
 }
