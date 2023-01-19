@@ -43,7 +43,7 @@ function calculate() {
   } else if (userKind == "cola") {
     kindPrice = 1.5
   } else {
-    document.getElementById("kind").innerHTML = "Error"
+    document.getElementById("kindtext").innerHTML = "Error"
   }
 
   let totalPrice = sizePrice + kindPrice
